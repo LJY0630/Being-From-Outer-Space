@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b963a4239b86dec4289081d7018047e2, type: 3}
+  m_Name: HBoots4
+  m_EditorClassIdentifier: 
+  itemcode: 4
+  addHp: 20
+  addMana: 20
+  addDef: 4
+  addPower: 0
+  addMagic: 0
+  addHeal: 20

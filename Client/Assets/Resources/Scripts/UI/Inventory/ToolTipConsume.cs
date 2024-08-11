@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using TMPro;
+
+public class ToolTipConsume : MonoBehaviour
+{
+    public TextMeshProUGUI nameTxt;
+    public TextMeshProUGUI seeTxt;
+    public TextMeshProUGUI buyTxt;
+    public TextMeshProUGUI comsumeTxt;
+
+    public Camera camera;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void SetToolTip(string name, int sell, int buy, int healing)
+    {
+        nameTxt.text = name;
+        seeTxt.text = "판매 가격 : " + sell;
+        buyTxt.text = "구매 가격 : " + buy;
+
+        if (name.Contains("Health"))
+        {
+            comsumeTxt.text = "체력 치유량 : " + healing;
+        }
+        else 
+        {
+            comsumeTxt.text = "체력 치유량 : " + healing;
+        }
+    }
+
+    private void Update()
+    {
+        transform.position = Input.mousePosition;
+
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out RaycastHit hitInfo))
+        {
+            gameObject.SetActive(false);
+        }
+        else 
+        {
+            Debug.Log("Block");
+        }
+    }
+}
