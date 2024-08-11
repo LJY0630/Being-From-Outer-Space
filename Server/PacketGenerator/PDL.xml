@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PDL>
+  
+  <packet name="S_BroadcastEnterGame">
+	<int name="playerId"/>
+	<float name="posX"/>
+	<float name="posY"/>
+	<float name="posZ"/>
+  </packet>
+  <packet name="C_LeaveGame">
+  </packet>
+  <packet name="S_BroadcastLeaveGame">
+	<int name="playerId"/>
+  </packet>
+  <packet name="S_PlayerList">
+	<list name="player">
+	  <bool name="isSelf"/>
+	  <int name="playerId"/>
+	  <float name="posX"/>
+	  <float name="posY"/>
+	  <float name="posZ"/>
+	</list>
+  </packet>
+  <packet name="C_Move">
+    <bool name="isMoving"/>
+		<float name="directionX"/>
+    <float name="directionY"/>
+    <float name="directionZ"/>
+    <float name="posX"/>
+    <float name="posY"/>
+    <float name="posZ"/>
+    <float name="moveSpeed"/>
+  </packet>
+
+  <packet name="C_Dead">
+    
+  </packet>
+  
+  <packet name="S_BroadcastDead">
+    <int name="playerId"/>
+  </packet>
+
+  <packet name="C_RespawnPlayer">
+    
+  </packet>
+
+  <packet name="S_BroadcastRespawnPlayer">
+    <int name="playerId"/>
+  </packet>
+  
+  <packet name="S_BroadcastMove">
+		<int name="playerId"/>
+    <bool name="isMoving"/>
+		<float name="directionX"/>
+    <float name="directionY"/>
+    <float name="directionZ"/>
+    <float name="posX"/>
+    <float name="posY"/>
+    <float name="posZ"/>
+    <float name="moveSpeed"/>
+  </packet>
+  <packet name="C_Jump">
+    
+  </packet>
+  <packet name="S_BroadcastJump">
+    <int name="playerId"/>
+  </packet>
+  <packet name="C_Attack">
+    <int name="damage"/>
+  </packet>
+  <packet name="S_BroadcastAttack">
+    <int name="playerId"/>
+  </packet>
+  <packet name="C_Skill">
+    <int name="skillNum"/>
+  </packet>
+  <packet name="S_BroadcastSkill">
+    <int name="playerId"/>
+    <int name="skillNum"/>
+  </packet>
+
+  <packet name="C_DecideTargetMonster">
+    <int name="playerId"/>
+    <int name="targetPlayerId"/>
+    <int name="monsterId"/>
+  </packet>
+  <packet name="S_BroadcastDecideTargetMonster">
+    <int name="playerId"/>
+    <int name="targetPlayerId"/>
+    <int name="monsterId"/>
+  </packet>
+
+  <packet name="C_PlayerStat">
+    <int name="attack"/>
+    <int name="heal"/>
+    <int name="power"/>
+    <int name="magic"/>
+  </packet>
+
+  <packet name="S_BroadcastPlayerStat">
+    <int name="playerId"/>
+    <int name="attack"/>
+    <int name="heal"/>
+    <int name="power"/>
+    <int name="magic"/>
+  </packet>
+  
+  <packet name="C_MonsterAttack">
+    <int name="monsterId"/>
+    <int name="targetPlayerId"/>
+  </packet>
+  
+  <packet name="S_BroadcastMonsterAttack">
+    <int name="monsterId"/>
+    <int name="playerId"/>
+    <int name="targetPlayerId"/>
+  </packet>
+  
+  <packet name="C_MonsterMove">
+    <int name="playerId"/>
+    <int name="monsterId"/>
+    <bool name="isMoving"/>
+    <float name="moveSpeed"/>
+    <float name="directionX"/>
+    <float name="directionY"/>
+    <float name="directionZ"/>
+    <float name="posX"/>
+    <float name="posY"/>
+    <float name="posZ"/>
+  </packet>
+  <packet name="S_BroadcastMonsterMove">
+    <int name="playerId"/>
+    <int name="monsterId"/>
+    <bool name="isMoving"/>
+    <float name="moveSpeed"/>
+    <float name="directionX"/>
+    <float name="directionY"/>
+    <float name="directionZ"/>
+    <float name="posX"/>
+    <float name="posY"/>
+    <float name="posZ"/>
+  </packet>
+  
+  <packet name="C_MonsterDamaged">
+    <int name="playerId"/>
+    <int name="monsterId"/>
+    <int name="damaged"/>
+  </packet>
+  <packet name="S_BroadcastMonsterDamaged">
+    <int name="playerId"/>
+    <int name="monsterId"/>
+    <int name="damaged"/>
+  </packet>
+  <packet name="C_MonsterDead">
+    <int name="playerId"/>
+    <int name="monsterId"/>
+    <int name="killPlayerId"/>
+  </packet>
+  <packet name="S_BroadcastMonsterDead">
+    <int name="playerId"/>
+    <int name="monsterId"/>
+    <int name="killPlayerId"/>
+  </packet>
+  <packet name="C_BossDamaged">
+    <int name="damaged"/>
+  </packet>
+  <packet name="S_BroadcastBossDamaged">
+    <int name="damaged"/>
+    <int name="playerId"/>
+  </packet>
+  <packet name="C_BossDead">
+    
+  </packet>
+  <packet name="S_BroadcastBossDead">
+    
+  </packet>
+  <packet name="C_MonsterSpawn">
+    <int name="to_playerId"/>
+    <list name="MonsterId">
+      <int name="monsterid"/>
+    </list>
+    <list name="positionX">
+      <float name="posX"/>
+    </list>
+    <list name="positionY">
+      <float name="posY"/>
+    </list>
+    <list name="positionZ">
+      <float name="posZ"/>
+    </list>
+    <list name="WayPoint">
+      <float name="way0_X"/>
+      <float name="way0_Y"/>
+      <float name="way0_Z"/>
+      <float name="way1_X"/>
+      <float name="way1_Y"/>
+      <float name="way1_Z"/>
+    </list>
+  </packet>
+  <packet name="S_BroadcastMonsterSpawn">
+    <list name="MonsterId">
+      <int name="monsterid"/>
+    </list>
+    <list name="positionX">
+      <float name="posX"/>
+    </list>
+    <list name="positionY">
+      <float name="posY"/>
+    </list>
+    <list name="positionZ">
+      <float name="posZ"/>
+    </list>
+    <list name="WayPoint">
+      <float name="way0_X"/>
+      <float name="way0_Y"/>
+      <float name="way0_Z"/>
+      <float name="way1_X"/>
+      <float name="way1_Y"/>
+      <float name="way1_Z"/>
+    </list>
+  </packet>
+  <packet name="C_EnterBoss">
+    
+  </packet>
+  <packet name="S_EnterSignBoss">
+    
+  </packet>
+  
+  <packet name="C_RandBossPatern">
+    <int name="paternNum"/>
+    <list name="downLaserPos">
+      <float name="posX"/>
+      <float name="posZ"/>
+    </list>
+  </packet>
+  
+  <packet name="S_BroadcastRandBossPatern">
+    <int name="paternNum"/>
+    <list name="downLaserPos">
+      <float name="posX"/>
+      <float name="posZ"/>
+    </list>
+  </packet>
+  
+  
+  <packet name="C_Chat">
+    <string name="chat"/>
+  </packet>
+  <packet name="S_BroadcastChat">
+    <int name="playerId"/>
+    <string name="chat"/>
+  </packet>
+
+  <packet name="C_InvenInfo">
+    <int name="playerId"/>
+    <list name="Items">
+      <string name="itemId"/>
+      <int name="cnt"/>
+    </list>
+  </packet>
+
+  <packet name="S_PlayerInfo">
+    <int name = "playerId"/>
+    <int name = "Hp"/>
+    <int name = "Mp"/>
+    <int name = "Level"/>
+    <int name = "Money"/>
+    <int name = "exp"/>
+    <list name="Items">
+      <string name="itemId"/>
+      <int name="cnt"/>
+      <bool name="isEquipped"/>
+    </list>
+  </packet>
+  
+  <packet name="C_RequestPlayerInfo">
+    <int name ="playerId"/>
+  </packet>
+
+  <packet name="S_QuestInfo">
+    <int name="playerId"/>
+    <list name="QuestInfo">
+      <int name="questId"/>
+      <int name="questState"/>
+    </list>
+  </packet>
+
+  <packet name="C_RequestQuestInfo">
+    <int name="playerId"/>
+  </packet>
+
+  <packet name = "C_UpdateQuestInfo">
+    <int name = "playerId"/>
+    <int name = "questId"/>
+    <int name = "questState"/>
+  </packet>
+
+  <packet name ="C_Equipped">
+    <string name="itemId"/>
+  </packet>
+
+  <packet name="C_UnEquipped">
+    <string name="itemId"/>
+  </packet>
+
+  <packet name="S_BroadcastEquipped">
+    <string name="itemId"/>
+    <int name="playerId"/>
+  </packet>
+
+  <packet name="S_BroadcastUnEquipped">
+    <string name="itemId"/>
+    <int name="playerId"/>
+  </packet>
+
+  <packet name="C_RequestLogin">
+    <string name="Id"/>
+    <string name="Password"/>
+  </packet>
+
+  <packet name="S_CheckLogin">
+    <bool name="successLogin"/>
+  </packet>
+
+  <packet name="C_RequestEnterGame">
+    <ind name="playerId"/>
+  </packet>
+
+  <packet name="S_SelectHost">
+    <int name="hostId"/>
+  </packet>
+
+  <packet name ="S_SetServerSession">
+    <int name="clientId"/>
+  </packet>
+
+  <packet name="C_RequestRegist">
+    <string name="Id"/>
+    <string name="Password"/>
+  </packet>
+
+  <packet name="S_SuccessRegister">
+    <bool name="Registed"/>
+  </packet>
+
+  <packet name="C_SendMoney">
+    <int name="money"/>
+  </packet>
+
+  <packet name="C_SendExp">
+    <int name="exp"/>
+  </packet>
+
+  <packet name="C_SendLevel">
+    <int name="level"/>
+  </packet>
+
+  <packet name="S_SendLevel">
+    <int name="playerId"/>
+  </packet>
+
+  <packet name="C_SendPotionEat">
+    <int name="potionType"/>
+  </packet>
+  
+  <packet name="S_BroadcastPotionEat">
+    <int name="playerId"/>
+
+    <int name="potionType"/>
+  </packet>
+  
+  <packet name="S_BroadcastExp">
+    <int name="playerId"/>
+    <int name="exp"/>
+  </packet>
+
+  <packet name="C_RequestBarter">
+    <int name="playerId"/>
+  </packet>
+
+  <packet name="S_RequestBarter">
+    <int name="playerId"/>
+  </packet>
+  
+  <packet name="C_OkBarter">
+    <bool name="isOk"/>
+    <int name="playerId"/>
+  </packet>
+
+  <packet name="S_PlayerBarter">
+    <int name="barterId"/>
+    <int name="otherplayerId"/>
+    <bool name="isOk"/>
+  </packet>
+
+  <packet name="C_OkFinishBarter">
+    <int name="barterId"/>
+  </packet>
+
+  <packet name="C_CancelBarter">
+    <int name="barterId"/>
+  </packet>
+
+  <packet name="S_CancelBarter">
+    <int name="barterId"/>
+  </packet>
+
+  <packet name="S_FinishBarter">
+    <int name="barterId"/>
+  </packet>
+
+  <packet name="C_BarterItem">
+    <int name="barterId"/>
+    <int name="money"/>
+    <list name="barterItem">
+      <string name="itemId"/>
+      <int name="cnt"/>
+    </list>
+  </packet>
+
+  <packet name="C_RespawnMonster">
+    <int name="monsterId"/>
+    <float name="posX"/>
+    <float name="posY"/>
+    <float name="posZ"/>
+  </packet>
+
+  <packet name="S_BroadcastRespawnMonster">
+    <int name="monsterId"/>
+    <float name="posX"/>
+    <float name="posY"/>
+    <float name="posZ"/>
+  </packet>
+  
+  <packet name="S_SendDragItemInfo">
+    <int name="barterId"/>
+    <string name="itemId"/>
+    <int name="otherplayerId"/>
+    <int name="money"/>
+    <int name="cnt"/>
+    <bool name="isSet"/>
+  </packet>
+
+  <packet name="C_DragItemInfo">
+    <int name="barterId"/>
+    <string name="itemId"/>
+    <int name="cnt"/>
+    <bool name="isSet"/>
+    <int name="money"/>
+  </packet>
+
+  
+</PDL>
